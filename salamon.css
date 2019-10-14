@@ -1,0 +1,35 @@
+body{
+    color: red;
+    background-color: blueviolet;
+    background-image: url('https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/vegan_chocolate_cookies_04207_16x9.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+    font-size: x-large;
+}
+h1{
+    color: crimson;
+    text-align: center;
+    font-style: italic;
+}
+table{
+    font: x-large;
+    font-weight: 600;
+    border: 2px solid black;
+    width: 100%;
+    color: ;
+}
+th{
+    height: 50px;
+    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid rgb(236, 8, 8);
+}
+td{
+    
+    border-bottom: 1px solid rgb(236, 8, 8);
+    
+}
+p{
+    text-align: center;
+    color: black;
+}
