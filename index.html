@@ -1,28 +1,55 @@
-<!DOCTYPE html>
+
 <html>
-
-<head>
-
-    <title> - lab7 - </title>
-    <link rel="stylesheet" href="salamon.css">
-    
-</head>
+<title> Cats </title>
+<link rel="stylesheet" href="salamon2.css">
+<head></head>
 
 <body>
-    <header> </header>
+    <header>
+        <h1> Adopt the kitten</h1>
+    </header>
     <main>
-        <h1> - Salmon Cookies - </h1>
-        <table id="salmonTable"></table>
+        <h2>
+            add a kitten
+        </h2>
+        <form id="addkittenForm">
+            <fieldset>
+                <legend>Basic information </legend>
+                <label> Name </label>
+                <input type="text" name="name">
+                <label> Breed</label>
+                <input type="text" name="Breed">
+                <label> Coat colar</label>
+                <input type="text" name="coatColar">
+                <label> Intrests</label>
+                <input type="text" name="Intrests">
+                <span> Lest Intrests by commans </span>
+            </fieldset>
+            <fieldset>
+                <legend> Plasemnt in formation </legend>
+                <p> Can by placed with .. </p>
+                <label>
+                    <input type="checkbox" name="isGoodWithKids">
+                    Kids
+                </label>
+                <label>
+                    <input type="checkbox" name="isGoodWithDog">
+                    Dogs
+                </label>
+                <label>
+                    <input type="checkbox" name="isGoodWithOtherCat">
+                    Other Cats
+                </label>
+            </fieldset>
+            <button type="submit">Submit</button>
+        </form>
+        <h2> kitten are avaible For Adoption :</h2>
+        <div id="kittenProfil">
+            <script> src = "js/event.js"</script>
+        </div>
     </main>
-    </br>
-    </br>
-    </br>
-    <p>made by ahmad al-hawamdeh </br>15/10/2019 </br> tafilah first </p>
-
-
-    <footer> Copyright ahmad al-hawamdeh 2019 </footer>
-
-    <script src="js/app.js"> </script>
 </body>
+<footer> copying AHMAD AL-HAWAMDEH 2019</footer>
+<script src="js/cats.js"></script>
 
 </html>
