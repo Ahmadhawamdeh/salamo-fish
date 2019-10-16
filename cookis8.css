@@ -1,0 +1,66 @@
+body{
+   background-image: url('https://www.seriouseats.com/recipes/images/2016/11/20160610-lofthouse-cookies-vicky-wasik-4-1500x1125.jpg');
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: cover;
+   color: darkslategray;
+   font-style: italic;
+   font-size: large;
+
+}
+h1{
+    text-align: center;
+    font-size: xx-large;
+    color: darkred;
+    font-style: unset;
+}
+form{
+    text-align: center;
+}
+table{
+    text-align: center;
+    font: x-large;
+    font-weight: 1000;
+    border: 4px solid black;
+    width: 100%;
+    color: black;
+    }
+th{
+    border: 3px solid black;
+    color: brown;
+}
+td{
+    border: 3px solid black;
+}
+
+button {
+    margin: auto;
+    display: block;
+    padding: 10px 20px;
+    border: 2px solid black;
+    font-family: cursive;
+    color: black;
+    font-size: 80%;
+    font-weight: bold;
+    position: relative;
+    transition: 0.8s;
+    cursor: pointer;
+ }
+ button::before {
+    transition: 0.8s;
+    position: absolute;
+    background-color: black;
+    color: #fff;
+ }
+ button:hover {
+    transition: 0.8s;
+    background-color: black;
+    color: white;
+    border-radius: 180%;
+    border-color: whitesmoke;
+ }
+ footer{
+     text-align: center;
+     color: black;
+     
+ }

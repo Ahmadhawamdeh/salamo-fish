@@ -1,55 +1,35 @@
-
+<!DOCTYPE html>
 <html>
-<title> Cats </title>
-<link rel="stylesheet" href="salamon2.css">
-<head></head>
+
+<head>
+    <title> Salmon Cookies lab 8 </title>
+    <link rel="stylesheet" href="cookis8.css">
+</head>
 
 <body>
-    <header>
-        <h1> Adopt the kitten</h1>
-    </header>
-    <main>
-        <h2>
-            add a kitten
-        </h2>
-        <form id="addkittenForm">
-            <fieldset>
-                <legend>Basic information </legend>
-                <label> Name </label>
-                <input type="text" name="name">
-                <label> Breed</label>
-                <input type="text" name="Breed">
-                <label> Coat colar</label>
-                <input type="text" name="coatColar">
-                <label> Intrests</label>
-                <input type="text" name="Intrests">
-                <span> Lest Intrests by commans </span>
-            </fieldset>
-            <fieldset>
-                <legend> Plasemnt in formation </legend>
-                <p> Can by placed with .. </p>
-                <label>
-                    <input type="checkbox" name="isGoodWithKids">
-                    Kids
-                </label>
-                <label>
-                    <input type="checkbox" name="isGoodWithDog">
-                    Dogs
-                </label>
-                <label>
-                    <input type="checkbox" name="isGoodWithOtherCat">
-                    Other Cats
-                </label>
-            </fieldset>
-            <button type="submit">Submit</button>
-        </form>
-        <h2> kitten are avaible For Adoption :</h2>
-        <div id="kittenProfil">
-            <script> src = "js/event.js"</script>
-        </div>
-    </main>
+    <h1> - cookies center - </h1>
+
+
+    <form id="newform">
+        <fieldset>
+            <legend>(( add Info ))</legend>
+            <label>Location: </label>
+            <input type="text" name="location"><br><br>
+            <label>Min value : </label>
+            <input type="number" name="min"><br><br>
+            <label>Max value :</label>
+            <input type="number" name="max"><br><br>
+            <label>Average :</label>
+            <input type="number" name="avgSales"><br><br>
+        </fieldset>
+        <br>
+        
+        <button type="submit">Submit</button>
+    </form>
+    <br>
+    <div id="newform2"></div>
+    <footer>Copyrights Ahmad Al-Hawamdeh @ 2019</footer>
+    <script src='js/app.js'></script>
 </body>
-<footer> copying AHMAD AL-HAWAMDEH 2019</footer>
-<script src="js/cats.js"></script>
 
 </html>

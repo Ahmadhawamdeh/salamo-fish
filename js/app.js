@@ -1,84 +1,157 @@
 'use strict';
-function kitten(name, Breed, coatColar, Intrests, isGoodWithKids, isGoodWithDog, isGoodWithOtherCat) {
-    this.name = name;
-    this.Breed = Breed;
-    this.coatColar = coatColar;
-    this.Intrests = Intrests;
-    this.isGoodWithKids = isGoodWithKids;
-    this.isGoodWithDog = isGoodWithDog;
-    this.isGoodWithOtherCat = isGoodWithOtherCat;
-}
-var kittenForm = document.getElementById("addkittenForm");
-kittenForm.addEventListener('submit', function (event) {
-    event.preventDefault();
-    var name = event.target.name.value;
-    console.log(name);
-    var Breed = event.target.Breed.value;
-    console.log(Breed);
-    var coatColar = event.target.coatColar.value;
-    console.log(coatColar);
-    var Intrests = event.target.Intrests.value;
-    Intrests = Intrests.split(',');
-    console.log(Intrests);
-    var isGoodWithKids = event.target.isGoodWithKids.checked;
-    var isGoodWithDog = event.target.isGoodWithDog.checked;
-    var isGoodWithOtherCat = event.target.isGoodWithOtherCat.checked;
-    var newkitten = new kitten(name, Breed, coatColar, Intrests, isGoodWithDog, isGoodWithKids, isGoodWithOtherCat);
-    console.log(newkitten);
-    newkitten.getage();
-    newkitten.render();
-}
-);
-kitten.prototype.getage = function () {
-    return randomAge(3, 12) + ' month old';
-};
-function randomAge(min, max) {
-    var random = Math.floor(Math.random() * (max - min + 1) + min);
-    console.log(random);
-    return random;
-}
-kitten.prototype.render = function () {
-    var parentElemnt = document.getElementById("kittenProfil");
-    var article = document.createElement('article');
-    parentElemnt.appendChild(article);
-    var h2 = document.createElement('h2');
-    h2.textContent = this.name;
-    article.appendChild(h2);
-    var p = document.createElement('p');
-    p.textContent = this.name + ' is adorble, and is  ' + this.getage();
-    article.appendChild(p);
-    var ul = document.createElement('ul');
-    article.appendChild(ul);
-    for (var i = 0; i < this.Intrests.lenght; i++) {
-        var li = document.createElement('li');
-        li.textContent = this.Intrests[i];
-        ul.appendChild(p);
+
+var hours = ['6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 pm', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm'];//14
+
+var mainstorage = document.getElementById('newform2');
+
+var F_Row;
+var table = document.createElement('table');
+mainstorage.appendChild(table);
+table.setAttribute('cellspacing', '10px');
+
+function addElement(tagName, mainstorage, text) {
+    var element = document.createElement(tagName);
+    mainstorage.appendChild(element);
+
+    if (text) {
+        element.textContent = text;
     }
-    var table = document.createElement('table');
-    article.appendChild(table);
-    var row1 = document.createElement('tr');
-    table.appendChild(row1);
-    var row2 = document.createElement('tr');
-    table.appendChild(row2);
-    var th1 = document.createElement('th');
-    th1.textContent = 'good with kids ';
-    row1.appendChild(th1);
-    var th2 = document.createElement('th');
-    th2.textContent = 'good with Dogs ';
-    row1.appendChild(th2);
-    var th3 = document.createElement('th');
-    th3.textContent = 'good with other cats ';
-    row1.appendChild(th3);
-    var td1 = document.createElement('td');
-    td1.textContent = this.isGoodWithKids;
-    row2.appendChild(td1);
-    var td2 = document.createElement('td');
-    td2.textContent = this.isGoodWithDog;
-    row2.appendChild(td2);
-    var td3 = document.createElement('td');
-    td3.textContent = this.isGoodWithOtherCat;
-    row2.appendChild(td3);
-    var img = document.createElement('img');
-    img.setAttribute('src', 'img/' + this.name + 'jpeg');
-    article.appendChild(img);
+
+    return element;
 }
+
+//var identi
+function Shop(location, min, max, avg) {
+    this.location = location;
+    this.min = min;
+    this.max = max;
+    this.avgcookie = avg;
+    this.cook_number = [];
+    this.bigTotal = 0;
+
+    this.generateHourlySales();
+}
+
+Shop.prototype.avgNumCus = function () {
+    var rang = this.max - this.min;
+    var rand = Math.random() * rang + this.min;
+    return Math.ceil(rand);
+};
+
+Shop.prototype.generateHourlySales = function () {
+    for (var i = 0; i < hours.length; i++) {
+        var cookisonehour = Math.ceil(this.avgNumCus() * this.avgcookie);
+        this.cook_number.push(cookisonehour);
+        this.bigTotal += cookisonehour;
+    }
+    console.log(this.cook_number);
+};
+//table1
+Shop.prototype.renderRow = function (table) {
+
+    var salesRow = addElement('tr', table);
+    addElement('td', salesRow, this.location);
+
+    for (var i = 0; i < this.cook_number.length; i++) {
+        var currentHourlySales = this.cook_number[i];
+        addElement('td', salesRow, currentHourlySales);
+    }
+
+    addElement('td', salesRow, this.bigTotal);
+};
+
+function H_Row() {
+
+    var hourRow = addElement('tr', table);
+
+    addElement('th', hourRow);
+
+    for (var i = 0; i < hours.length; i++) {
+        addElement('th', hourRow, hours[i]);
+    }
+
+    addElement('th', hourRow, 'M_Totals');
+}
+
+function CF_Row() {
+
+    console.log('F_Row');
+
+    var tr = document.createElement('tr');
+
+    F_Row = tr;
+
+    table.appendChild(tr);
+
+    var td = document.createElement('td');
+
+    tr.appendChild(td);
+
+    td.textContent = 'Totals';
+
+    var megaTotal = 0;
+
+    for (var hourIndex = 0; hourIndex < hours.length; hourIndex++) {
+
+        td = document.createElement('td');
+
+        tr.appendChild(td);
+
+        var totalHourSales = 0;
+
+        for (var shopIndex = 0; shopIndex < shops.length; shopIndex++) {
+            var shop = shops[shopIndex];
+            totalHourSales += shop.cook_number[hourIndex];
+        }
+
+        td.textContent = totalHourSales;
+
+        megaTotal += totalHourSales;
+    }
+
+    td = document.createElement('td');
+
+    tr.appendChild(td);
+
+    td.textContent = megaTotal;
+}
+
+//colomin
+var shops = [];
+shops.push(new Shop('seattle', 21, 59, 6.1));
+shops.push(new Shop('tokyo', 3, 20, 1.4));
+shops.push(new Shop('dubai', 18, 32, 3.5));
+shops.push(new Shop('paris', 20, 38, 2.2));
+shops.push(new Shop('lima', 4, 17, 4.1));
+
+
+H_Row();
+
+for (var i = 0; i < shops.length; i++) {
+    var currentShop = shops[i];
+    currentShop.renderRow(table);
+}
+
+CF_Row();
+//new table_sss
+function SU_Hand(event) {
+    event.preventDefault();
+
+    var N_of_Location = event.target.location.value;
+    var min = parseInt(event.target.min.value);
+    var max = parseInt(event.target.max.value);
+    var avgSales = parseFloat(event.target.avgSales.value);
+
+    var center = new Shop(N_of_Location, min, max, avgSales);
+
+    shops.push(center);
+
+    table.removeChild(F_Row);
+
+    center.renderRow(table);
+
+    CF_Row();
+
+}
+var form = document.getElementById('newform');
+form.addEventListener('submit', SU_Hand);
