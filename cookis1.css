@@ -1,0 +1,14 @@
+body{
+    background-color: blueviolet;
+    color: black;
+    text-align: left;
+}
+h1{
+    text-align: center;
+    color: crimson;
+}
+p{
+    text-align: right;
+    color: blanchedalmond;
+    font-size: x-large;
+}
