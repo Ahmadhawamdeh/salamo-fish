@@ -1,0 +1,29 @@
+body{
+    background-image: url('https://www.loveandoliveoil.com/wp-content/uploads/2019/08/cacao-butter-cookies-FEAT.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-style: italic;
+    font-size: large;
+ 
+ }
+ h1{
+     text-align: center;
+     font-size: xx-large;
+     color: black;
+     
+ }
+ a{
+     font-size: xx-large;
+     font-style: oblique;
+ }
+ footer{
+      text-align: center;
+      color: black; 
+      font-size: x-large;
+  }
+  p{
+      font-size: x-large;
+      color: black;
+      font-style: initial;
+  }
