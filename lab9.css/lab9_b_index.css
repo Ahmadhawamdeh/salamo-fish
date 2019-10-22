@@ -27,3 +27,12 @@ body{
       color: black;
       font-style: initial;
   }
+  legend{
+      text-align: center;
+  }
+  fieldset{
+      text-align: center;
+  }
+  img{
+      float: right;
+  }
