@@ -1,0 +1,31 @@
+body{
+    background-image: url('https://thebusybaker.ca/wp-content/uploads/2018/09/soft-chewy-sugar-cookies-fbig2.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-style: italic;
+    font-size: large;
+ 
+ }
+header{
+    text-align: center;
+    font-size: xx-large;
+    color: crimson;
+    
+}
+h1{
+    font-size: xx-large;
+    color: brown;
+
+}
+footer{
+    text-align: center;
+    color: black; 
+    font-size: x-large;
+}
+p{
+    font-size: x-large;
+    color: black;
+    font-style: initial;
+    font-weight: bold;
+}
